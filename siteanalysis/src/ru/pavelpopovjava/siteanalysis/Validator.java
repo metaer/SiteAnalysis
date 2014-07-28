@@ -1,7 +1,6 @@
 package ru.pavelpopovjava.siteanalysis;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,7 +22,7 @@ class Validator {
     private static void fillArrayListWithConstants(List allowedValues) {
         allowedValues.add(Analyst.ANALYSE_EMAILS);
         allowedValues.add(Analyst.DATA_CAPACITY);
-        allowedValues.add(Analyst.INTEGERS);
+        allowedValues.add(Analyst.NUMERICS);
         allowedValues.add(Analyst.ROMAN_NUMERALS);
     }
 
