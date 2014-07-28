@@ -38,13 +38,13 @@ public class Analyst {
 
         switch (method) {
             case ANALYSE_EMAILS:
-                result = analyseByRegExp(html,'');
+                result = analyseByRegExp(html, "");
                 break;
             case ROMAN_NUMERALS:
-                result = analyseByRegExp(html,'');
+                result = analyseByRegExp(html, "");
                 break;
             case INTEGERS:
-                result = analyseByRegExp(html,'');
+                result = analyseByRegExp(html, "");
                 break;
             case DATA_CAPACITY:
                 result = analyseDataCapacity(html);
@@ -55,7 +55,7 @@ public class Analyst {
         return null;
     }
 
-    private String analyseByRegExp(String html) {
+    private String analyseByRegExp(String html, String regExp) {
         return null;
     }
 
