@@ -21,9 +21,9 @@ class Validator {
 
     private static void fillArrayListWithConstants(List allowedValues) {
         allowedValues.add(Analyst.ANALYSE_EMAILS);
-        allowedValues.add(Analyst.DATA_CAPACITY);
-        allowedValues.add(Analyst.NUMERICS);
-        allowedValues.add(Analyst.ROMAN_NUMERALS);
+        allowedValues.add(Analyst.ANALYSE_DATA_CAPACITY);
+        allowedValues.add(Analyst.ANALYSE_NUMERICS);
+        allowedValues.add(Analyst.ANALYSE_ROMAN_NUMERALS);
     }
 
     public static void validateDomainExistingViaDNS() throws WrongDomainException {

@@ -22,9 +22,9 @@ public class Analyst {
     private String result;
 
     public static final int ANALYSE_EMAILS = 1;
-    public static final int ROMAN_NUMERALS = 2;
-    public static final int NUMERICS =       3;
-    public static final int DATA_CAPACITY =  4;
+    public static final int ANALYSE_ROMAN_NUMERALS = 2;
+    public static final int ANALYSE_NUMERICS =       3;
+    public static final int ANALYSE_DATA_CAPACITY =  4;
 
     public Analyst(String url, int method) throws AnalystException{
         //Проверяем, что метод анализа находится в пределах от 1 до 4
@@ -43,13 +43,13 @@ public class Analyst {
                 result = analyseByRegExp(html, "[-a-z0-9!#$%&'*+/=?^_`{|}~]+(\\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\\.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])");
 //                result = analyseByRegExp(html, "(\\S+)@([a-z0-9-]+)(\\.)([a-z]{2,4})(\\.?)([a-z]{0,4})+");
                 break;
-            case ROMAN_NUMERALS:
+            case ANALYSE_ROMAN_NUMERALS:
                 result = analyseByRegExp(html, "[MDCLXVI]");
                 break;
-            case NUMERICS:
+            case ANALYSE_NUMERICS:
                 result = analyseByRegExp(html, "[0-9]");
                 break;
-            case DATA_CAPACITY:
+            case ANALYSE_DATA_CAPACITY:
                 result = analyseDataCapacity(html);
         }
     }
