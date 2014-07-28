@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.UnknownHostException;
 
 /**
  * Класс для получения исходного кода страницы. Оставляем доступ только в пределах пакета
@@ -18,8 +19,11 @@ class HtmlGetter {
         //Получаем html код страницы
         try {
             html = getContentOfHTTPPage("http://" + url, "UTF-8");
-        } catch (Exception e) {
-            throw new RequestException(e.getMessage());
+        } catch (UnknownHostException e) {
+            throw new RequestException("Ошибка: " + url + " не существует");
+        }
+        catch (Exception e) {
+            throw new RequestException("Ошибка получения данных: " + e.toString());
         }
 
         return html;

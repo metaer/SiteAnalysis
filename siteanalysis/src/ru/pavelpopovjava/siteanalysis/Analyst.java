@@ -36,6 +36,7 @@ public class Analyst {
 
     public void run() throws AnalystException{
         //Запрос к сайту и получение html кода выносим в отдельный класс, т.к. это не задача анализатора
+
         String html = HtmlGetter.getPageHtml(url);
 
         switch (method) {
