@@ -25,4 +25,8 @@ class Validator {
             throw new WrongMethodException(method);
         }
     }
+
+    public static void validateDomainExistingViaDNS() throws WrongDomainException {
+        //TODO сделать
+    }
 }

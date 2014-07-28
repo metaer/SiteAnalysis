@@ -9,6 +9,8 @@ public class Analyst {
 
     private int method;
 
+    private String result;
+
     public static final int ANALYSE_EMAILS = 1;
     public static final int ROMAN_NUMERALS = 2;
     public static final int INTEGERS = 3;
@@ -23,7 +25,18 @@ public class Analyst {
     }
 
     public void run() throws AnalystException{
+        //Запрос к сайту и получение html кода выносим в отдельный класс, т.к. это не задача анализатора
+        String html = HtmlGetter.getPageHtml(url);
 
+        switch (method) {
+            case ANALYSE_EMAILS:
+
+            case ROMAN_NUMERALS:
+
+            case INTEGERS:
+
+            case DATA_CAPACITY:
+        }
     }
 
     public void printResult() {
