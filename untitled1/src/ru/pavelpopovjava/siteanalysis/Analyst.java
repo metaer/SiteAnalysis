@@ -1,5 +1,10 @@
 package ru.pavelpopovjava.siteanalysis;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Анализатор. Главный класс пакета
  */
@@ -33,18 +38,16 @@ public class Analyst {
         //Запрос к сайту и получение html кода выносим в отдельный класс, т.к. это не задача анализатора
         String html = HtmlGetter.getPageHtml(url);
 
-        System.out.println(html);
-        System.exit(0);
-
         switch (method) {
             case ANALYSE_EMAILS:
-                result = analyseByRegExp(html, "");
+                result = analyseByRegExp(html, "[-a-z0-9!#$%&'*+/=?^_`{|}~]+(\\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\\.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])");
+//                result = analyseByRegExp(html, "(\\S+)@([a-z0-9-]+)(\\.)([a-z]{2,4})(\\.?)([a-z]{0,4})+");
                 break;
             case ROMAN_NUMERALS:
-                result = analyseByRegExp(html, "");
+                result = analyseByRegExp(html, "[MDCLXVI]");
                 break;
             case INTEGERS:
-                result = analyseByRegExp(html, "");
+                result = analyseByRegExp(html, "[0-9]");
                 break;
             case DATA_CAPACITY:
                 result = analyseDataCapacity(html);
@@ -52,11 +55,18 @@ public class Analyst {
     }
 
     private String analyseDataCapacity(String html) {
+        //TODO сделать
         return null;
     }
 
     private String analyseByRegExp(String html, String regExp) {
-        return null;
+        Pattern pattern = Pattern.compile(regExp);
+        Matcher matcher = pattern.matcher(html);
+        Map<Integer, String> res = new HashMap<>();
+        while (matcher.find()){
+            res.put(matcher.start(), matcher.group());
+        }
+        return res.toString();
     }
 
     public void printResult() {
