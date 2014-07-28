@@ -13,17 +13,18 @@ class Validator {
      * @throws WrongMethodException
      */
     public static void validateMethodOfAnalysis(int method) throws WrongMethodException {
-        int[] allowedValuesArray = {
-                Analyst.ANALYSE_EMAILS,
-                Analyst.DATA_CAPACITY,
-                Analyst.INTEGERS,
-                Analyst.ROMAN_NUMERALS
-            };
-
-        List allowedValues = Arrays.asList(allowedValuesArray);
-        if (!allowedValues.contains(method)) {
+        List allowedValues = new ArrayList<Integer>();
+        fillArrayListWithConstants(allowedValues);
+        if (!allowedValues.contains(new Integer(method))) {
             throw new WrongMethodException(method);
         }
+    }
+
+    private static void fillArrayListWithConstants(List allowedValues) {
+        allowedValues.add(Analyst.ANALYSE_EMAILS);
+        allowedValues.add(Analyst.DATA_CAPACITY);
+        allowedValues.add(Analyst.INTEGERS);
+        allowedValues.add(Analyst.ROMAN_NUMERALS);
     }
 
     public static void validateDomainExistingViaDNS() throws WrongDomainException {

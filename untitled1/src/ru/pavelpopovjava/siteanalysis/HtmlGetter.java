@@ -17,7 +17,7 @@ class HtmlGetter {
 
         //Получаем html код страницы
         try {
-            html = getContentOfHTTPPage(url, "UTF-8");
+            html = getContentOfHTTPPage("http://" + url, "UTF-8");
         } catch (Exception e) {
             throw new RequestException(e.getMessage());
         }
