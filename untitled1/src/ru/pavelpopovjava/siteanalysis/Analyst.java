@@ -1,12 +1,20 @@
 package ru.pavelpopovjava.siteanalysis;
 
 public class Analyst {
-    private static Analyst ourInstance = new Analyst();
 
-    public static Analyst getInstance() {
-        return ourInstance;
+    private String url;
+
+    private int method;
+
+    public Analyst(String url, int method) {
+        this.url = url;
+        this.method = method;
     }
 
-    private Analyst() {
+    public void run() throws AnalystException{
+    }
+
+    public void printResult() {
+
     }
 }
