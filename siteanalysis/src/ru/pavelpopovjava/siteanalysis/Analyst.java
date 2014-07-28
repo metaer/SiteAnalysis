@@ -23,7 +23,7 @@ public class Analyst {
 
     public static final int ANALYSE_EMAILS = 1;
     public static final int ANALYSE_ROMAN_NUMERALS = 2;
-    public static final int ANALYSE_NUMERICS =       3;
+    public static final int ANALYSE_NUMERALS =       3;
     public static final int ANALYSE_DATA_CAPACITY =  4;
 
     public Analyst(String url, int method) throws AnalystException{
@@ -46,7 +46,7 @@ public class Analyst {
             case ANALYSE_ROMAN_NUMERALS:
                 result = analyseByRegExp(html, "[MDCLXVI]");
                 break;
-            case ANALYSE_NUMERICS:
+            case ANALYSE_NUMERALS:
                 result = analyseByRegExp(html, "[0-9]");
                 break;
             case ANALYSE_DATA_CAPACITY:

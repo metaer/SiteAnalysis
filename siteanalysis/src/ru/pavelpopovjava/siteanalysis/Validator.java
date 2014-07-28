@@ -22,7 +22,7 @@ class Validator {
     private static void fillArrayListWithConstants(List allowedValues) {
         allowedValues.add(Analyst.ANALYSE_EMAILS);
         allowedValues.add(Analyst.ANALYSE_DATA_CAPACITY);
-        allowedValues.add(Analyst.ANALYSE_NUMERICS);
+        allowedValues.add(Analyst.ANALYSE_NUMERALS);
         allowedValues.add(Analyst.ANALYSE_ROMAN_NUMERALS);
     }
 
